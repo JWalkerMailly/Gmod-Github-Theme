@@ -1,0 +1,369 @@
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+	font-family: 'Mona-Sans';
+}
+
+.mainmenu {
+	padding-top: 48px;
+	padding-left: 48px;
+	color: white;
+	fill: white;
+}
+
+.mainmenu h1 {
+	font-size: 76px;
+}
+
+.mainmenu ul {
+	list-style: none;
+}
+
+.mainmenu a {
+	font-size: 24px;
+	color: white;
+	fill: white;
+}
+
+.mainmenu a:hover {
+	color: #B0BBBD !important;
+	fill: #B0BBBD !important;
+}
+
+.button, .button span, .button a {
+	background: transparent !important;
+	color: white !important;
+	fill: white !important;
+}
+
+.button:hover, .button:hover span, .button:hover a {
+	background: transparent !important;
+	color: #B0BBBD !important;
+	fill: #B0BBBD !important;
+	box-shadow: none !important;
+}
+
+#version {
+	background-color: #21262D;
+	padding: 6px 16px;
+	color: #c9d1d9;
+	fill: #c9d1d9;
+	right: 8px;
+	top: 8px;
+	border: 1px solid #363B42;
+	border-radius: 6px;
+	transition: all 0.1s;
+}
+
+#version svg {
+	position: relative;
+	top: 2px;
+}
+
+#version div {
+	display: inline-block;
+	position: relative;
+	top: -2px;
+}
+
+#version:hover {
+	background-color: #30363D;
+	border-color: #8B949E;
+}
+
+#version svg {
+	margin-right: 8px;
+}
+
+#NavBar {
+	background-color: #161B22;
+	border-top: 1px solid #30363D;
+}
+
+.gitpopup
+{
+	background-color: #30363D;
+	position: absolute;
+	bottom: 50px;
+	right: 10px;
+	width: 230px;
+	z-index: 1000;
+	padding: 0px;
+	border-radius: 6px;
+	list-style: none;
+	display: none;
+	border: 1px solid black;
+	padding: 12px 0;
+	box-shadow: inset 0px 1px 0.5px 0px #43484E;
+}
+
+.gitpopup li
+{
+	display: block;
+	position: relative;
+	text-align: left;
+	cursor: pointer;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #828B94;
+	padding: 6px 24px;
+}
+
+.gitpopup li:hover
+{
+	background-color: #484F58;
+	color: white;
+}
+
+.gamemode_list
+{
+	overflow: auto;
+	max-height: 80%;
+}
+
+.controls ul
+{
+	list-style: none;
+	padding: 0;
+}
+
+.maplist {
+	background-color: #161B22;
+	border-radius: 6px 0 0 6px;
+	border: 1px solid #30363D;
+}
+
+::placeholder {
+	color: #8B949E;
+}
+
+.controls .search
+{
+	width: 100%;
+	box-sizing: border-box;
+	background-color: #0D1117;
+	line-height: 28px;
+	border-radius: 5px;
+	border: 1px solid #30363D;
+	padding-left: 12px;
+	outline-width: 0;
+	color: #C2C3C5;
+}
+
+.controls LI.category
+{
+	background-color: #161B22;
+	margin: 0;
+	font-size: 11px;
+	font-weight: bold;
+	border-radius: 6px 0 0 6px;
+	color: #6B727D;
+	height: 28px;
+	cursor: pointer;
+	position: relative;
+}
+
+.controls LI.active
+{
+	background-color: #0D1117;
+	color: #D7D8D9;
+}
+
+.controls LI.category .name
+{
+	position: absolute;
+	left: 12px;
+	top: 8px;
+	bottom: 0;
+	right: 32px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.controls LI.category .count
+{
+	padding: 8px;
+	padding-right: 12px;
+	float: right;
+	background-color: transparent;
+	color: #58A6FF;
+	font-size: 10px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+gamesettings {
+	background-color: #161B22;
+	border-radius: 0 6px 6px 0;
+	border: 1px solid #30363D;
+	width: 239px;
+}
+
+gamesettings bottom button
+{
+	bottom: 0px;
+	padding: 10px;
+	position: absolute;
+	margin: 10px;
+	font-size: 20px;
+	width: 219px
+}
+
+.maplist-inset {
+	background-color: #0D1117;
+}
+
+.search-wrapper {
+	padding-right: 10px;
+}
+
+UL.category LI:first-child {
+	color: #FDFDFD;
+	padding-bottom: 8px;
+}
+
+UL.category LI:first-child small {
+	color: #A371F7;
+}
+
+UL.category LI.mapicon IMG
+{
+	margin-bottom: 8px;
+}
+
+UL.category LI.mapicon IMG.thumbnail
+{
+	width: 162px;
+	height: 162px;
+	border-radius: 6px;
+}
+UL.category LI.mapicon
+{
+	position: relative;
+	width: 162px;
+	text-align: center;
+	font-size: 10px;
+	padding: 8px;
+	padding-bottom: 2px;
+	margin: 0;
+	cursor: pointer;
+	vertical-align: top;
+}
+
+UL.category LI.mapicon span {
+	word-break: break-all;
+	color: #6E7681;
+	font-size: 12px;
+}
+
+UL.category LI.mapicon.selected
+{
+	background-color: transparent;
+	border-radius: 3px;
+}
+
+UL.category LI.mapicon.selected span
+{
+	font-weight: bold;
+	color: #D7D8D9;
+}
+
+.dropdown
+{
+	position: relative;
+	z-index: 100;
+}
+
+.dropdown .label
+{
+	border-radius: 6px;
+	height: 28px;
+	padding-left: 12px;
+	line-height: 28px;
+	cursor: pointer;
+
+	background-color: #21262D;
+	border: 1px solid #363B42;
+	color: #C9D1D9;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.dropdown .contents
+{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 39px;
+	background-color: #161B22;
+	border-radius: 6px;
+	border: 1px solid #30363D;
+	display: none;
+	cursor: pointer;
+	font-size: 12px;
+}
+
+.dropdown .contents div:first-child {
+	border-radius: 6px 6px 0 0;
+}
+
+.dropdown .contents div:last-child {
+	border-radius: 0 0 6px 6px;
+}
+
+.dropdown .contents div
+{
+	padding: 8px 12px;
+	color: #C4CCD4;
+	border-bottom: 1px solid #21262D;
+}
+
+.dropdown .contents div:hover
+{
+	background-color: #1F242C;
+}
+
+.btn-primary, .btn-primary-disabled
+{
+	border: 0;
+	background-color: #1F6FEB;
+	border-radius: 6px;
+	color: white;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+gamesettings .control LABEL {
+	color: #C9D1D9;
+}
+
+input[type=checkbox] {
+	margin-left: 0;
+  display: none;
+}
+input[type=checkbox] ~ label::before {
+  content: '\2713';
+  background-color: #3B3B3B;
+  display: inline-block;
+  text-align: center;
+  color: transparent;
+  line-height: 12px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #858585;
+  border-radius: 3px;
+  margin: 4px 0;
+  margin-right: 8px;
+}
+input[type=checkbox]:checked ~ label::before {
+  color: white;
+}
+
+input[type=checkbox]:disabled ~ label::before {
+	border: 1px solid #30363D;
+	background-color: #0D1117;
+}

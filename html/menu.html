@@ -1,0 +1,119 @@
+<html>
+	<head>
+		<title>Garry's Mod Main Menu</title>
+
+		<link rel="preload" href="Mona-Sans.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="stylesheet" type="text/css" href="css/menu/Menu.css" />
+		<link rel="stylesheet" type="text/css" href="css/menu/NavBar.css" />
+		<link rel="stylesheet" type="text/css" href="css/menu/PageOptions.css" />
+		<link rel="stylesheet" type="text/css" href="css/menu/NewGame.css" />
+		<link rel="stylesheet" type="text/css" href="css/menu/Servers.css" />
+		<link rel="stylesheet" type="text/css" href="css/Workshop.css" />
+		<link rel="stylesheet" type="text/css" href="css/override.css" />
+
+		<script type="text/javascript" src="js/lua.js"></script>
+
+		<script type="text/javascript" src="js/thirdparty/jquery.js"></script>
+		<script type="text/javascript" src="js/thirdparty/jquery-color.js"></script>
+		<script type="text/javascript" src="js/thirdparty/angular.js"></script>
+		<script type="text/javascript" src="js/thirdparty/angular-ui.js"></script>
+
+		<script type="text/javascript" src="js/menu/WorkshopFiles.js"></script>
+		<script type="text/javascript" src="js/menu/Subscriptions.js"></script>
+		<script type="text/javascript" src="js/menu/menuApp.js?2"></script>
+		<script type="text/javascript" src="js/menu/control.Menu.js?2"></script>
+		<script type="text/javascript" src="js/menu/control.Main.js?2"></script>
+		<script type="text/javascript" src="js/menu/control.NewGame.js"></script>
+		<script type="text/javascript" src="js/menu/control.Servers.js"></script>
+		<script type="text/javascript" src="js/menu/control.Addons.js"></script>
+		<script type="text/javascript" src="js/menu/control.Demos.js"></script>
+		<script type="text/javascript" src="js/menu/control.Saves.js"></script>
+		<script type="text/javascript" src="js/menu/control.Dupes.js"></script>
+
+		<script type="text/javascript" src="js/svc.Tranny.js"></script>
+
+		<script type="text/javascript" src="js/menu/TestData.js"></script>
+		<script type="text/javascript" src="js/menu/TestServers.js"></script>
+		<script type="text/javascript" src="js/menu/TestWorkshop.js"></script>
+
+		<!-- ng-show="[^"]+" -->
+		<!-- ng-hide="[^"]+" -->
+	</head>
+
+	<body ng-app="MenuApp" ng-controller="MenuController">
+
+		<!-- Versioning -->
+		<div id="version" ng-click="ShowNews()" ng-show="Branch" ng-hide="ShowBack">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122V6A2.5 2.5 0 0110 8.5H6a1 1 0 00-1 1v1.128a2.251 2.251 0 11-1.5 0V5.372a2.25 2.25 0 111.5 0v1.836A2.492 2.492 0 016 7h4a1 1 0 001-1v-.628A2.25 2.25 0 019.5 3.25zM4.25 12a.75.75 0 100 1.5.75.75 0 000-1.5zM3.5 3.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0z"></path></svg> 
+			<div>{{Branch}} ({{Version}})</div>
+		</div>
+
+		<!-- Partial view container -->
+		<div ng-view>
+		</div>
+
+		<div id="NavBar">
+
+			<!-- Back to main menu -->
+			<a href="#/" class="ui_sound_return" ng-show="ShowBack">
+				<div class="left button">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill-rule="evenodd" d="M11.03 2.59a1.5 1.5 0 011.94 0l7.5 6.363a1.5 1.5 0 01.53 1.144V19.5a1.5 1.5 0 01-1.5 1.5h-5.75a.75.75 0 01-.75-.75V14h-2v6.25a.75.75 0 01-.75.75H4.5A1.5 1.5 0 013 19.5v-9.403c0-.44.194-.859.53-1.144l7.5-6.363zM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 01.75-.75h3.5a.75.75 0 01.75.75v6.25h5v-9.403L12 3.734z"></path></svg>
+					<span ng-Tranny="'back_to_main_menu'" ></span>
+				</div>
+			</a>
+
+			<div ng-show="InGame">
+
+				<!-- Back to game -->
+				<div class="left button" ng-click="BackToGame()">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M10.53 5.03a.75.75 0 10-1.06-1.06l-6.25 6.25a.75.75 0 000 1.06l6.25 6.25a.75.75 0 101.06-1.06L5.56 11.5H17a3.248 3.248 0 013.25 3.248v4.502a.75.75 0 001.5 0v-4.502A4.748 4.748 0 0017 10H5.56l4.97-4.97z"></path></svg>
+					<span ng-Tranny="'back_to_game'"></span>
+				</div>
+
+				<!-- Favourite server -->
+				<div ng-show="ShowFavButton">
+					<div class="left button" ng-click="ToggleServerFavorites( true )" ng-hide="IsCurrentServerFav">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill-rule="evenodd" d="M12 .25a.75.75 0 01.673.418l3.058 6.197 6.839.994a.75.75 0 01.415 1.279l-4.948 4.823 1.168 6.811a.75.75 0 01-1.088.791L12 18.347l-6.117 3.216a.75.75 0 01-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 01.416-1.28l6.838-.993L11.328.668A.75.75 0 0112 .25zm0 2.445L9.44 7.882a.75.75 0 01-.565.41l-5.725.832 4.143 4.038a.75.75 0 01.215.664l-.978 5.702 5.121-2.692a.75.75 0 01.698 0l5.12 2.692-.977-5.702a.75.75 0 01.215-.664l4.143-4.038-5.725-.831a.75.75 0 01-.565-.41L12 2.694z"></path></svg>
+						<span ng-Tranny="'favorite_this_server'"></span>
+					</div>
+
+					<!-- Unfavourite server -->
+					<div class="left button" ng-click="ToggleServerFavorites( false )" ng-show="IsCurrentServerFav">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M12.5 1.25a.75.75 0 00-1.5 0v8.69L6.447 5.385a.75.75 0 10-1.061 1.06L9.94 11H1.25a.75.75 0 000 1.5h8.69l-4.554 4.553a.75.75 0 001.06 1.061L11 13.561v8.689a.75.75 0 001.5 0v-8.69l4.553 4.554a.75.75 0 001.061-1.06L13.561 12.5h8.689a.75.75 0 000-1.5h-8.69l4.554-4.553a.75.75 0 10-1.06-1.061L12.5 9.939V1.25z"></path></svg>
+						<span ng-Tranny="'unfavorite_this_server'"></span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Gamemode server -->
+			<div class="right button" ng-click="ToggleGamemodes()">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill-rule="evenodd" d="M13.152.682a2.25 2.25 0 012.269 0l.007.004 6.957 4.276a2.276 2.276 0 011.126 1.964v7.516c0 .81-.432 1.56-1.133 1.968l-.002.001-11.964 7.037-.004.003a2.276 2.276 0 01-2.284 0l-.026-.015-6.503-4.502a2.268 2.268 0 01-1.096-1.943V9.438c0-.392.1-.77.284-1.1l.003-.006.014-.026a2.28 2.28 0 01.82-.827h.002L13.152.681zm.757 1.295h-.001L2.648 8.616l6.248 4.247a.776.776 0 00.758-.01h.001l11.633-6.804-6.629-4.074a.75.75 0 00-.75.003zM18 9.709l-3.25 1.9v7.548L18 17.245V9.709zm1.5-.878v7.532l2.124-1.25a.777.777 0 00.387-.671V7.363L19.5 8.831zm-9.09 5.316l2.84-1.66v7.552l-3.233 1.902v-7.612c.134-.047.265-.107.391-.18l.002-.002zm-1.893 7.754V14.33a2.277 2.277 0 01-.393-.18l-.023-.014-6.102-4.147v7.003c0 .275.145.528.379.664l.025.014 6.114 4.232z"></path></svg>
+				<span>{{GamemodeTitle}}</span>
+			</div>
+
+			<!-- Problems -->
+			<div class="right button" ng-click="ToggleProblems()" style="overflow: visible;">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path d="M13 17.5a1 1 0 11-2 0 1 1 0 012 0zm-.25-8.25a.75.75 0 00-1.5 0v4.5a.75.75 0 001.5 0v-4.5z"></path><path fill-rule="evenodd" d="M9.836 3.244c.963-1.665 3.365-1.665 4.328 0l8.967 15.504c.963 1.667-.24 3.752-2.165 3.752H3.034c-1.926 0-3.128-2.085-2.165-3.752L9.836 3.244zm3.03.751a1 1 0 00-1.732 0L2.168 19.499A1 1 0 003.034 21h17.932a1 1 0 00.866-1.5L12.866 3.994z"></path></svg>
+				<span ng-Tranny="'problems'"></span>
+			</div>
+
+			<!-- Lang -->
+			<div class="right button" ng-click="ToggleLanguage()" style="overflow: visible;">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill-rule="evenodd" d="M0 3.75A.75.75 0 01.75 3h7.497c1.566 0 2.945.8 3.751 2.014A4.496 4.496 0 0115.75 3h7.5a.75.75 0 01.75.75v15.063a.75.75 0 01-.755.75l-7.682-.052a3 3 0 00-2.142.878l-.89.891a.75.75 0 01-1.061 0l-.902-.901a3 3 0 00-2.121-.879H.75a.75.75 0 01-.75-.75v-15zm11.247 3.747a3 3 0 00-3-2.997H1.5V18h6.947a4.5 4.5 0 012.803.98l-.003-11.483zm1.503 11.485V7.5a3 3 0 013-3h6.75v13.558l-6.927-.047a4.5 4.5 0 00-2.823.971z"></path></svg>
+				<span>{{Language}}</span>
+			</div>
+		</div>
+
+		<ul class="gamemode_list gitpopup">
+			<li ng-repeat="gm in Gamemodes|filter:{menusystem:true}|orderBy:'name'" ng-click="SelectGamemode( gm )">
+				<span>{{gm.title}}</span>
+			</li>
+		</ul>
+
+		<ul class="language_list gitpopup">
+			<li ng-repeat="lang in Languages" ng-click="SelectLanguage( lang )">
+				<img ng-src='../resource/localization/{{lang}}.png'>
+			</li>
+		</ul>
+	</body>
+</html>
