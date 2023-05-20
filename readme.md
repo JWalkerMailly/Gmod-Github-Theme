@@ -14,7 +14,7 @@ https://github.com/JWalkerMailly/Derma-Github-Theme
 
 - Navigate to your garrysmod/garrysmod folder.
 - Make a backup of html, resource and backgrounds folder.
-- Replace the folders you backed up with the ones found in this repo.
+- Drop the folders you backed up with the ones found in this repo and overwrite files with same name.
 - Give a rest to your eyes.
 
 ## Screenshots
