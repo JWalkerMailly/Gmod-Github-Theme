@@ -125,6 +125,7 @@ body.dark
 	white-space: nowrap;
 	max-width: 100%;
 	box-sizing: border-box;
+	color: white;
 }
 .server_info.visible
 {
