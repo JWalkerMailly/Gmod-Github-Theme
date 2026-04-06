@@ -22,7 +22,7 @@
 
 				<li class="icon mapicon {{MapClass( map )}}" ng-repeat="map in category.maps | orderBy:'toString()' | mapFilter:SearchText" >
 					<img ng-click="FavMap( map )" class="{{FavMapClass( map )}} {{FavMapHover( map )}}" src="img/empty.png" />
-					<img ng-click="ClickMap( map )" ng-src="{{MapIcon( map, category.category )}}" class="thumbnail" /><br />
+					<img ng-click="SelectMap( map )" ng-dblclick="DblClickMap( map )" ng-src="{{MapIcon( map, category.category )}}" class="thumbnail" loading="lazy"/><br />
 					<span>{{map}}</span>
 				</li>
 			</ul>
