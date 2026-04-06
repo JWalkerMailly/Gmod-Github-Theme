@@ -54,6 +54,18 @@ UL.category LI.icon
 	display: inline-block;
 }
 
+PREVIEW > img {
+	position: relative !important;
+	width: 100% !important;
+	height: 100% !important;
+	margin-left: auto !important;
+	margin-top: auto !important;
+	margin-right: auto !important;
+	margin-bottom: auto !important;
+	left: 50% !important;
+	top: 50% !important;
+	transform: none !important;
+}
 
 .scrollable
 {
