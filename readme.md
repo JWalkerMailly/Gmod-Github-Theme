@@ -8,8 +8,7 @@ This theme is released as is without guarantee. If any problem arises, open an i
 > Switching branch (eg. x86-x64, Dev, Beta) will overwrite this theme. You need to reinstall the theme after.
 
 > [!IMPORTANT]  
-> For proper font rendering, you must install fonts on your computer (Mona-Sans **1.0** and all other variants found in the TTF subdirectory)
-> [Mona Sans 1.0](https://github.com/github/mona-sans/releases/download/v1.0/Mona.Sans.1.0.zip)
+> For proper font rendering, you must install [Mona Sans 1.0](https://github.com/github/mona-sans/releases/download/v1.0/Mona.Sans.1.0.zip) fonts on your computer and all other variants found in the TTF subdirectory.
 
 This does not change the appearance of Source's menus, for that, see this project:\
 [Source-Github-Theme](https://github.com/JWalkerMailly/Source-Github-Theme)
