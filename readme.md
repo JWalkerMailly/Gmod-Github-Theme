@@ -4,6 +4,9 @@
 
 This theme is released as is without guarantee. If any problem arises, open an issue. This theme is not completed and **will remove some menus from your game such as "Creations".** You may modify and redistribute this theme as you please.
 
+> [!NOTE]  
+> Switching branch (eg. x86-x64, Dev, Beta) will overwrite this theme. You need to reinstall the theme after.
+
 > [!IMPORTANT]  
 > For proper font rendering, you must install fonts on your computer (Mona-Sans **1.0** and all other variants found in the TTF subdirectory)
 > [Mona Sans 1.0](https://github.com/github/mona-sans/releases/download/v1.0/Mona.Sans.1.0.zip)
