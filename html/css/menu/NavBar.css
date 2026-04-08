@@ -162,14 +162,17 @@
 	color: white;
 }
 
+.games_list hr {
+    border-color: black;
+}
+
 UL.games_list
 {
-	right: 150px;
+	right: 10px;
 	width: 230px;
 	overflow: auto;
 	max-height: 300px;
 	padding: 0;
-	border: 3px solid #333;
 }
 
 UL.games_list LI
@@ -185,6 +188,12 @@ UL.games_list LI
 	margin-right: 2px;
 	margin-bottom: 2px;
 	position: relative;
+}
+
+UL.games_list LI input[type=checkbox] + label::before
+{
+	margin: 3px 0;
+  	margin-left: 3px;
 }
 
 UL.games_list LI:last-child
@@ -221,7 +230,7 @@ UL.games_list LI.notowned
 
 UL.language_list
 {
-	right: 100px;
+	right: 240px;
 	text-align: center;
 }
 

@@ -343,9 +343,13 @@ gamesettings .control LABEL {
 
 input[type=checkbox] {
 	margin-left: 0;
-  display: none;
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	pointer-events: none;
 }
-input[type=checkbox] ~ label::before {
+input[type=checkbox] + label::before {
   content: '\2713';
   background-color: #3B3B3B;
   display: inline-block;
@@ -359,11 +363,11 @@ input[type=checkbox] ~ label::before {
   margin: 4px 0;
   margin-right: 8px;
 }
-input[type=checkbox]:checked ~ label::before {
+input[type=checkbox]:checked + label::before {
   color: white;
 }
 
-input[type=checkbox]:disabled ~ label::before {
+input[type=checkbox]:disabled + label::before {
 	border: 1px solid #30363D;
 	background-color: #0D1117;
 }
