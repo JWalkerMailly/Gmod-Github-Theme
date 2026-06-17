@@ -1,20 +1,20 @@
 <div class="mainmenu" ng-controller="ControllerMain">
 	<ul>
 		<li><h1>Garry's mod</h1></li>
-		<li ng-show="InGame"><a ng-click="BackToGame()" ng-Tranny="'resume_game'"></a></li>
+		<li ng-show="InGame"><a ng-click="BackToGame()" ng-Localize="'resume_game'"></a></li>
 		<li ng-show="InGame">&nbsp;</li>
-		<li><a ng-href="#/newgame/" ng-Tranny="'new_game'"></a></li>
-		<li><a ng-click="MenuOption( this, 'OpenServerBrowser')" ng-Tranny="'find_mp_game'"></a></li>
+		<li><a ng-href="#/newgame/" ng-Localize="'new_game'"></a></li>
+		<li><a ng-click="MenuOption( this, 'OpenServerBrowser')" ng-Localize="'find_mp_game'"></a></li>
 
 		<li>&nbsp;</li>
-		<li><a ng-href="#/addons/" ng-Tranny="'addons'"></a></li>
-		<li><a ng-click="MenuOption( this, 'OpenOptionsDialog')" ng-Tranny="'options'"></a></li>
+		<li><a ng-href="#/addons/" ng-Localize="'addons'"></a></li>
+		<li><a ng-click="MenuOption( this, 'OpenOptionsDialog')" ng-Localize="'options'"></a></li>
 
 		<li>&nbsp;</li>
 		<li ng-show="InGame">
-			<a ng-click="MenuOption( this, 'Disconnect');" ng-Tranny="'disconnect'"></a>
+			<a ng-click="MenuOption( this, 'Disconnect');" ng-Localize="'disconnect'"></a>
 		</li>
-		<li><a ng-click="MenuOption( this, 'Quit')" ng-Tranny="'quit'"></a></li>
+		<li><a ng-click="MenuOption( this, 'Quit')" ng-Localize="'quit'"></a></li>
 	</ul>
 
 	<div class="news" ng-hide="NewsList.length == 0">

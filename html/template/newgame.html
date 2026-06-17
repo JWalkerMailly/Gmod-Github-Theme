@@ -3,7 +3,7 @@
 		
 		<div class="controls">
 			<div class="search-wrapper">
-				<input type="text" class="search" ng-model="SearchText" ng-tranny="'searchbar_placeholder'" />
+				<input type="text" class="search" ng-model="SearchText" ng-Localize="'searchbar_placeholder'" />
 			</div>
 
 			<ul>
@@ -18,7 +18,7 @@
 
 			<ul class="category" ng-repeat="category in MapList | orderBy:'order'" ng-hide="category.maps.length == 0 || CurrentCategory != category.category" ng-show="CurrentCategory == category.category">
 
-				<li>{{category.category}} <small>{{CountFiltered(category.maps)}} </small><small ng-tranny="category.maps.length == 1 && 'newgame_map' || 'newgame_maps'"></small></li>
+				<li>{{category.category}} <small>{{CountFiltered(category.maps)}} </small><small ng-Localize="category.maps.length == 1 && 'newgame_map' || 'newgame_maps'"></small></li>
 
 				<li class="icon mapicon {{MapClass( map )}}" ng-repeat="map in category.maps | orderBy:'toString()' | mapFilter:SearchText" >
 					<img ng-click="FavMap( map )" class="{{FavMapClass( map )}} {{FavMapHover( map )}}" src="img/empty.png" />
@@ -34,11 +34,11 @@
 		<div class="dropdown" style="margin: 10px;">
 
 			<div class="label" onclick="$(this).siblings('.contents').toggle()">
-				<span ng-tranny="MaxPlayersOption.label">{{MaxPlayersOption.label}}</span>
+				<span ng-Localize="MaxPlayersOption.label">{{MaxPlayersOption.label}}</span>
 				<i class='caret'></i>
 			</div>
 			<div class="contents" onclick="$(this).hide()">
-				<div ng-repeat="ply in Players" ng-click="UpdateMaxPlayers( ply )" ng-tranny="ply.label">
+				<div ng-repeat="ply in Players" ng-click="UpdateMaxPlayers( ply )" ng-Localize="ply.label">
 				{{ply.label}}
 				</div>
 			</div>
@@ -47,43 +47,43 @@
 		<div class="scrollable" style="margin: 10px; bottom: 54px; top: 42px">
 
 			<div class='control' ng-show="MaxPlayers > 1">
-				<label ng-Tranny="'server_name'"></label>
+				<label ng-Localize="'server_name'"></label>
 				<input type="text" ng-model="ServerSettings.hostname" />
 			</div>
 
 			<div class='control' ng-show="MaxPlayers > 1">
 				<input type="checkbox" ng-model="ServerSettings.sv_lan" ng-bind="CheckboxCheck()" id="sv_lan" />
-				<label ng-Tranny="'lan_server'" for="sv_lan"></label>
+				<label ng-Localize="'lan_server'" for="sv_lan"></label>
 			</div>
 
 			<div class='control' ng-show="MaxPlayers > 1">
 				<input type="checkbox" ng-model="ServerSettings.p2p_enabled" ng-bind="CheckboxCheck()" id="p2p_enabled" />
-				<label ng-Tranny="'p2p_server'" for="p2p_enabled"></label>
+				<label ng-Localize="'p2p_server'" for="p2p_enabled"></label>
 			</div>
 
 			<div class='control' ng-show="MaxPlayers > 1">
 				<input type="checkbox" ng-model="ServerSettings.p2p_friendsonly" id="p2p_friendsonly" />
-				<label ng-Tranny="'p2p_server_friendsonly'" for="p2p_friendsonly"></label>
+				<label ng-Localize="'p2p_server_friendsonly'" for="p2p_friendsonly"></label>
 			</div>
 
 			<div class='control control-text' ng-repeat="s in ServerSettings.Text" ng-show="MaxPlayers > 1 || s.Singleplayer">
-				<label ng-Tranny="s.text"></label>
+				<label ng-Localize="s.text"></label>
 				<input type="text" ng-model="s.Value"/>
 			</div>
 
 			<div class='control control-numeric' ng-repeat="s in ServerSettings.Numeric" ng-show="MaxPlayers > 1 || s.Singleplayer">
-				<label ng-Tranny="s.text"></label>
+				<label ng-Localize="s.text"></label>
 				<input type="text" ng-model="s.Value"/>
 			</div>
 
 			<div class='control' ng-repeat="s in ServerSettings.CheckBox" ng-show="MaxPlayers > 1 || s.Singleplayer">
 				<input type="checkbox" ng-model="s.Value" id="{{s.name}}" />
-				<label ng-Tranny="s.text" for="{{s.name}}"></label>
+				<label ng-Localize="s.text" for="{{s.name}}"></label>
 			</div>
 		</div>
 
 		<bottom>
-			<button class='btn-primary' ng-Tranny="'start_game'" ng-click="StartGame()">...</button>
+			<button class='btn-primary' ng-Localize="'start_game'" ng-click="StartGame()">...</button>
 		</bottom>
 	</gamesettings>
 </div>
